@@ -1,11 +1,12 @@
+{% load static %}
 <html>
 <head>
     <title>Room Genie List Ads</title>
-    <script src="./../js//jquery-3.3.1.min.js"></script>
-    <script src="./../js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./../fa/css/all.min.css">
-    <link rel="stylesheet" href="./../css/bootstrap.min.css">
-    <link rel="stylesheet" href="./../css/custom.css">
+    <script src="{% static 'js//jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <script>
         //This script gets loaded once the page gets loaded
         $(document).ready(function () {
@@ -34,51 +35,23 @@
             </div>
             <div class="col-md-9">
                 <div class="container-fluid">
+                    {% for ad in ads %}
                     <div class="row ad">
                         <div class="col-md-3">
-                            <img src="../images/room.jpg" class="img-fluid" alt="room preview">
+                            <img src="{{ad.image_url}}" class="img-fluid" alt="room preview">
                         </div>
                         <div class="col-md-6">
-                            <span class="float-left">Room is very ventilated in top notch area.</span>
+                            <span class="float-left">{{ ad.name }}</span>
                             <br/>
-                            <span class="float-left">Price: 200$</span>
+                            <span class="float-left">Price: {{ ad.price }}$</span>
                             <br/>
-                            <span class="float-left">Area: CBD</span>
+                            <span class="float-left">Area: {{ ad.area }}</span>
                         </div>
                         <div class="col-md-3 align-self-center">
                             <a style="vertical-align: middle;" class="btn btn-primary" href="ad-1.html"> View</a>
                         </div>                        
                     </div>
-                    <div class="row ad">
-                        <div class="col-md-3">
-                            <img src="../images/room.jpg" class="img-fluid" alt="room preview">
-                        </div>
-                        <div class="col-md-6">
-                            <span class="float-left">Room near to all aminities at cheap prices.</span>
-                            <br/>
-                            <span class="float-left">Price: 200$</span>
-                            <br/>
-                            <span class="float-left">Area: CBD</span>
-                        </div>
-                        <div class="col-md-3 align-self-center">
-                          <a style="vertical-align: middle;" class="btn btn-primary" href="ad-1.html"> View</a>
-                        </div>                        
-                    </div>
-                    <div class="row ad">
-                        <div class="col-md-3">
-                            <img src="../images/room.jpg" class="img-fluid" alt="room preview">
-                        </div>
-                        <div class="col-md-6">
-                            <span class="float-left">Room is very ventilated in top notch area.</span>
-                            <br/>
-                            <span class="float-left">Price: 200$</span>
-                            <br/>
-                            <span class="float-left">Area: CBD</span>
-                        </div>
-                        <div class="col-md-3 align-self-center">
-                            <a style="vertical-align: middle;" class="btn btn-primary" href="ad-1.html"> View</a>
-                        </div>                        
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

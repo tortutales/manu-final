@@ -21,8 +21,8 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('/', views.login),
-    path('test/', views.index)
+    path('', views.index),
+    path('ads/', views.ads)
 ]
 
 urlpatterns += staticfiles_urlpatterns()
