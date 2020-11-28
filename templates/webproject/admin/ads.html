@@ -28,10 +28,10 @@
         </div>
         <div class="row">
             <div class="col-md-3 submenu">
-                <a class="left-menu" href="./index.html">Dashboard</a>
-                <a class="left-menu" href="./ads.html">Ads</a>
-                <a class="left-menu" href="./profile.html">Profile</a>
-                <a class="left-menu" href="../login.html">Logout</a>
+                <a class="left-menu" href="/index">Dashboard</a>
+                <a class="left-menu" href="/ads">Ads</a>
+                <a class="left-menu" href="/profile">Profile</a>
+                <a class="left-menu" href="./login">Logout</a>
             </div>
             <div class="col-md-9">
                 <div class="container-fluid">
@@ -48,7 +48,7 @@
                             <span class="float-left">Area: {{ ad.area }}</span>
                         </div>
                         <div class="col-md-3 align-self-center">
-                            <a style="vertical-align: middle;" class="btn btn-primary" href="ad-1.html"> View</a>
+                            <a style="vertical-align: middle;" class="btn btn-primary" href="./{{ad.id}}"> View</a>
                         </div>                        
                     </div>
                     {% endfor %}

@@ -1,12 +1,13 @@
+{% load static %}
 <html>
 
 <head>
     <title>Room Genie ADMIN Admin Profile</title>
-    <script src="./../js//jquery-3.3.1.min.js"></script>
-    <script src="./../js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="./../fa/css/all.min.css">
-    <link rel="stylesheet" href="./../css/bootstrap.min.css">
-    <link rel="stylesheet" href="./../css/custom.css">
+    <script src="{% static 'js//jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'fa/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <script>
         //This script gets loaded once the page gets loaded
         $(document).ready(function () {
@@ -28,10 +29,10 @@
         </div>
         <div class="row">
             <div class="col-md-3 submenu">
-                <a class="left-menu" href="./index.html">Dashboard</a>
-                <a class="left-menu" href="./ads.html">Ads</a>
-                <a class="left-menu" href="./profile.html">Profile</a>
-                <a class="left-menu" href="../login.html">Logout</a>
+                <a class="left-menu" href="/index">Dashboard</a>
+                <a class="left-menu" href="/ads">Ads</a>
+                <a class="left-menu" href="/profile">Profile</a>
+                <a class="left-menu" href="./login">Logout</a>
             </div>
             <div class="col-md-9">
                 <div class="container-fluid">
@@ -39,14 +40,14 @@
                         <div class="col-md-4">
                             <label class="float-left">UserName</label></div>
                         <div class="col-md-8">
-                            <lable class="float-left">Moderator.</label>
+                            <lable class="float-left">{{user.name}}</label>
                         </div>
                     </div>
                     <div class="row dashboard">
                         <div class="col-md-4">
                             <label class="float-left">Email</label></div>
                         <div class="col-md-8">
-                            <lable class="float-left">admin@gmail.com.</label>
+                            <lable class="float-left">{{user.email}}</label>
                         </div>
                     </div>
                 </div>

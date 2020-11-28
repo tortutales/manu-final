@@ -37,26 +37,25 @@
         </div>
         <div class="row">
             <div class="col-md-3 submenu">
-                <a class="left-menu" href="./index.html">Dashboard</a>
-                <a class="left-menu" href="./ads.html">Ads</a>
-                <a class="left-menu" href="./profile.html">Profile</a>
-                <a class="left-menu" href="../login.html">Logout</a>
+                <a class="left-menu" href="/index">Dashboard</a>
+                <a class="left-menu" href="/ads">Ads</a>
+                <a class="left-menu" href="/profile">Profile</a>
+                <a class="left-menu" href="./login">Logout</a>
             </div>
             <div class="col-md-9">
                 <div class="container-fluid">
                     <form id="statusUpdate" method="POST">
                         <div class="row ad">
                             <div class="col-lg-6">
-                                <img class="card-img-top" src="../images/room-1.jpg" alt="Room image">
+                                <img class="card-img-top" src="{{ad.image_url}}" alt="Room image">
                             </div>
                             <div class="col-lg-6">
-                                <h5 class="card-title">Room Description</h5>
-                                <p class="card-text">Single room with attached bathroom in a good location. with Nice
-                                    interior and furniture.</p>
-                                <p class="card-text">Location: 33.8708° S, 151.2073° E</p>
-                                <p class="card-text">Rent: 200$ / Week</p>
+                                <h5 class="card-title">{{ad.name}}</h5>
+                                <p class="card-text">{{ad.description}}</p>
+                                <p class="card-text">{{ad.location}}</p>
+                                <p class="card-text">Rent: {{ad.price}}$ / Week</p>
                                 <p class="card-text">Available from: 3rd of December 2020</p>
-                                <p class="card-text ">Payment Mode: Cash</p>
+                                <p class="card-text ">Payment Mode: {{ad.payment_mode}}</p>
                                 <p class="card-text form-check-inline">Approve:</p>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="inlineRadioOptions"
