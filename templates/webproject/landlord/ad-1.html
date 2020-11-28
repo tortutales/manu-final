@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <title>Room Genie List Advertisement Edit</title>
+    <script src="./../js//jquery-3.3.1.min.js"></script>
+    <script src="./../js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./../fa/css/all.min.css">
+    <link rel="stylesheet" href="./../css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../css/custom.css">
+    <link rel="stylesheet" href="./../css/bootstrap-datepicker.css">
+    <script src="./../js/moment.js"></script>
+    <script src="./../js/bootstrap-datetimepicker.min.js"></script>
+    <script>
+        //This script gets loaded once the page gets loaded
+        $(document).ready(function () {
+            document.getElementById("adate").value = new Date().toISOString().slice(0, 10);
+            //Saving the advertisment and redirecting the user to his list of ads page
+            $("#save").click(function (event) {
+                alert("Your ad has been saved for further edit");
+                location.href = "./ads.html";
+            });
+            $("#statusUpdate").submit(function (event) {
+                //Checking the ad status for validation
+                //Checking whether RoomDesc is filled or not
+                if ($("#roomDesc").val() == "")
+                    alert("Room Description cant be empty");
+                //Checking if latitude and longitude has been defined
+                if ($("#lat").val() == "")
+                    alert("Latitude cant be empty");
+                if ($("#long").val() == "")
+                    alert("Longitude cant be empty");
+                //Checking if rent has been entered
+                if ($("#rent").val() == "")
+                    alert("Rent cant be empty");
+                //Checking if rent is a valid figure
+                if ($("#rent").val() <= 0)
+                    alert("Rent cant be empty");
+                var todayDate = new Date().toISOString().slice(0, 10);
+                if ($("#adate").val() < todayDate)
+                    alert("Available date cant be less than todays date");
+
+
+            });
+            //For enabling tooltip
+            $('[data-toggle="tooltip"]').tooltip()
+        });     
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row top-navbar">
+            <div class="col-md-3">
+                <span class="navbar-brand ">Room Genie</span>
+            </div>
+            <div class="col-md-9">
+                <span class="navbar-brand float-right">Hello Moderator!</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 submenu">
+                <a class="left-menu" href="./index.html">Dashboard</a>
+                <a class="left-menu" href="./ads.html">Saved Ads</a>
+                <a class="left-menu" href="./newadv.html">Create New Adv</a>
+                <a class="left-menu" href="./profile.html">Profile</a>
+                <a class="left-menu" href="../login.html">Logout</a>
+            </div>
+            <div class="col-md-9">
+                <div class="container-fluid">
+                    <form id="statusUpdate" method="POST">
+                        <div class="row ad">
+                            <div class="col-lg-6">
+                                <img class="card-img-top" src="../images/room-1.jpg" alt="Room image">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="card-title" for="roomDesc">Room Description</h5>
+                                        <textarea rows="5" style="min-width: 100%;"
+                                            id="roomDesc">Single room with attached bathroom in a good location. with Nice interior and furniture.</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <lable for="lat">Latitude:</label>
+                                        <input type="text" class="form-control" id="lat" data-toggle="tooltip"
+                                            data-placement="right" title="Please enter the latitude of room."
+                                            value="33.8708° S">
+                                </div>
+                                <div class="form-group">
+                                    <lable for="lat">Longitude:</label>
+                                        <input type="text" class="form-control" id="lomg" data-toggle="tooltip"
+                                            data-placement="right" title="Please enter the longitude of room."
+                                            value="33.8708° S">
+                                </div>
+                                <div class="form-group">
+                                    <lable for="rent">Rent per week:</label>
+                                        <input type="text" class="form-control" id="rent" data-toggle="tooltip"
+                                            data-placement="right" title="Please enter the rent per week." value="200">
+                                </div>
+                                <div class="form-group">
+                                    <lable for="adate">Available from:</label>
+                                        <input type="date" class="form-control" id="adate" name="adate">
+                                </div>
+                                <div class="form-group">
+                                    <lable for="pMode">Payment Mode: </label>
+                                        <select name="paymentMode" class="form-control" id="pMode">
+                                            <option value="Cheque">Cheque</option>
+                                            <option value="Cash">Cash</option>
+                                            <option value="DD">Demand Draft</option>
+                                        </select>
+                                </div>
+                                <div class="form-check">
+                                    <a id="save" class="btn btn-primary float-left">Save</a>
+                                    <button id="submit" class="btn btn-primary float-right">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="row footer">
+        <div class="col-sm-12 d-flex justify-content-center">Copyrights ROOMGENIE 2020</div>
+    </div>
+    </div>
+</body>
+
+</html>

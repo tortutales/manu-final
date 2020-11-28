@@ -1,0 +1,118 @@
+/* BASIC */
+
+html {
+    background-color: #56baed;
+  }
+  
+  
+  a {
+    color: #92badd;
+    display:inline-block;
+    text-decoration: none;
+    font-weight: 400;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display:inline-block;
+    margin: 40px 8px 10px 8px; 
+    color: #cccccc;
+  }
+  
+  
+  
+  /* STRUCTURE */
+  
+  .wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+  }
+  #formFooter {
+    background-color: #f6f6f6;
+    border-top: 1px solid #dce8f1;
+    padding: 25px;
+    text-align: center;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+  }
+  
+  /* TABS */
+  
+  h2.inactive {
+    color: #cccccc;
+  }
+  
+  h2.active {
+    color: #0d0d0d;
+    border-bottom: 2px solid #5fbae9;
+  }
+
+  /* Navbar */
+  .top-navbar{
+      background-color: #1e88e5 ;
+      z-index: 1039;
+      font-size: 0.9rem;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+  }
+  .footer{
+    background-color: #1e88e5 ;
+    z-index: 1039;
+    font-size: 0.9rem;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+  
+  .navbar-brand{
+    width: 15rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0;
+    color:#fff;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  /* Menu styling */
+  .left-menu{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 1.75rem 1rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .submenu{
+    background-color: #343a40 ;
+  }
+  /*Dashboard Styling*/
+  .dashboard{
+    width:auto;
+    padding:20px;
+  }
+  .img-fluid {
+    max-width: 100%;
+    height: auto
+  }
+  .ad{
+    width:auto;
+    padding:20px;
+    margin:20px;
+    border: #0d0d0d 1px solid; 
+  }

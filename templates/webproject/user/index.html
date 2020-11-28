@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <title>Room Genie ADMIN Advertisement List</title>
+    <script src="./../js//jquery-3.3.1.min.js"></script>
+    <script src="./../js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./../fa/css/all.min.css">
+    <link rel="stylesheet" href="./../css/bootstrap.min.css">
+    <link rel="stylesheet" href="./../css/custom.css">
+    <script>
+        //This script gets loaded once the page gets loaded
+        $(document).ready(function () {
+            //For enabling tooltip
+            $('[data-toggle="tooltip"]').tooltip()
+        });     
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row top-navbar">
+            <div class="col-md-3">
+                <span class="navbar-brand ">Room Genie</span>
+            </div>
+            <div class="col-md-9">
+                <span class="navbar-brand float-right">Hello User!</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 submenu">
+                <a class="left-menu" href="./index.html">Dashboard</a>
+                <a class="left-menu" href="./ads.html">Favourite Ads</a>
+                <a class="left-menu" href="./profile.html">Profile</a>
+                <a class="left-menu" href="../login.html">Logout</a>
+            </div>
+            <div class="col-md-9">
+                <div class="container-fluid">
+                    <div class="row dashboard">
+                        <div class="card-deck">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"><u>Direct Messages</u></h5>
+                                    <p class="card-text">You have few direct messages in your inbox.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"><u>Enquiries</u></h5>
+                                    <p class="card-text">Your enquiry has a reply from landlord. </p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"><u>Profile</u></h5>
+                                    <p class="card-text">Click here to change your profile.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row footer">
+            <div class="col-sm-12 d-flex justify-content-center">Copyrights ROOMGENIE 2020</div>
+        </div>
+    </div>
+</body>
+
+</html>

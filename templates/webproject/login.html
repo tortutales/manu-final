@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <title>Room Genie</title>
+    <script src="./js//jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./fa/css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <script>
+
+        //This script gets loaded once the page gets loaded
+        $(document).ready(function () {
+            //For enabling tooltip
+            $('[data-toggle="tooltip"]').tooltip()
+            //On form submit the below function gets executed
+            //based on the supplied username with a valid credential
+            //users will be redirected to their respective pages.
+            $("#login").submit(function (event) {
+                var email = $("#emailInput").val();
+                var pwd = $("#pwdInput").val();
+                //This will stop page redirection on form submit 
+                //failure.
+                event.preventDefault();
+                if (email == "") {
+                    alert("Please enter email address.");
+                    return;
+                }
+                if (pwd == "") {
+                    alert("Please enter password.");
+                    return;
+                }
+                if (email == "landlord@gmail.com" && pwd == "landlord") {
+                    location.href = './landlord/index.html';
+                    return;
+                }
+                if (email == "moderator@gmail.com" && pwd == "moderator") {
+                    location.href = './admin/index.html';
+                    return;
+                }
+                if (email == "user@gmail.com" && pwd == "user") {
+                    location.href = './user/index.html';
+                    return;
+                }
+                if(email!="" && pwd!="")
+                {
+                    alert("Please contact administrator for user credentials.");
+                    return;
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="card">
+            <div class="card-header">
+                Login to ROOMGENIE
+            </div>
+            <div class="card-body">
+                <form id="login" action="users.html" method="POST">
+                    <div class="form-group">
+                        <label for="emailInput">Email address</label>
+                        <input type="email" class="form-control" id="emailInput" data-toggle="tooltip"
+                            data-placement="right" title="Please enter email address." aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwdInput">Password</label>
+                        <input type="password" class="form-control" id="pwdInput" data-toggle="tooltip"
+                            data-placement="right" title="Please enter your password.">
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-placement="right"
+                        title="click here for submitting the details.">Login</button>
+                    <a class="btn btn-primary float-right" data-toggle="tooltip" data-placement="right"
+                        title="Click here for regestring with ROOMGENIE." href="./register.html">Register</a>
+                </form>
+                <div id="formFooter">
+                    Login with u'r
+                    <p>
+                        <a class="btn btn-primary social-login-btn social-facebook" href="https://facebook.com">
+                            <i class="fab fa-facebook-square"></i></a>
+                        <a class="btn btn-primary social-login-btn social-twitter" href="https://twitter.com">
+                            <i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-primary social-login-btn social-google" href="https://google.com">
+                            <i class="fab fa-google-plus"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
